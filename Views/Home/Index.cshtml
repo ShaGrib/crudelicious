@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Dish
+
+<div class="text-center m-5">
+    <h1>Welcome to CRUDelicious</h1>
+    <div class="d-flex justify-content-between">
+        <div class="col-6">
+            <p>Check out some recent dishes</p>
+            <hr>
+            @{
+                foreach (Dish d in ViewBag.allDishes)
+                {
+                    <p><a href="/@d.DishId">@d.Name</a> by @d.Chef</p>
+                }
+            }
+        </div>
+        <div class="col">
+            <a href="/new">Add a Dish</a>
+        </div>
+    </div>
+</div>
